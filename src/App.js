@@ -10,6 +10,7 @@ class App extends React.Component {
       //State is a object.
       key: 'value',
       name: 'Hamza',
+      number: 1,
     });
     // this.changeName = this.changeName.bind(this);
   }
@@ -39,13 +40,16 @@ class App extends React.Component {
   changeName = () => {
     this.setState({
       name: 'Talha',
+      number: ++this.state.number,
     })
   }
 
   render() {
+    test();
     return (
       <React.Fragment>
         {this.state.name}
+        {this.state.number}
         <br />
         <button onClick={this.changeName}>CHANGE NAME</button>        
       </React.Fragment>
@@ -54,6 +58,11 @@ class App extends React.Component {
 }
 
 export default App;
+
+const test = () => {
+  console.log("TEST");
+}
+
 
 /* state
   state things set.
